@@ -56,61 +56,97 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function FacultyLogin() {
-  const [regNo, setRegNo] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setMessage("");
+// export default function FacultyLogin() {
+//   const [regNo, setRegNo] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [message, setMessage] = useState("");
+//   const navigate = useNavigate();
 
-    try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/faculty/login`,
-        {
-          registration_number: formData.registration_number,
-    password: formData.password
-        }
-      );
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     setMessage("");
 
-      /**
-       * EXPECTED BACKEND RESPONSE FORMAT:
-       * {
-       *   user: { id, name, email, ... },
-       *   token?: "jwt-token"
-       * }
-       */
+//     try {
+//       const res = await axios.post(
+//         `${import.meta.env.VITE_API_URL}/api/faculty/login`,
+//         {
+//           registration_number: regNo,
+//           password : password,
+//         }
+//       );
 
-      const faculty = res.data.user;
+//       /**
+//        * EXPECTED BACKEND RESPONSE FORMAT:
+//        * {
+//        *   user: { id, name, email, ... },
+//        *   token?: "jwt-token"
+//        * }
+//        */
 
-      // 🔐 HARD VALIDATION (important)
-      if (!faculty || !faculty.id) {
-        throw new Error("Invalid faculty login response");
+//       const faculty = res.data.user;
+
+//       // 🔐 HARD VALIDATION (important)
+//       if (!faculty || !faculty.id) {
+//         throw new Error("Invalid faculty login response");
+//       }
+
+//       // ✅ STORE FACULTY (THIS WAS THE CORE BUG EARLIER)
+//       localStorage.setItem("faculty", JSON.stringify(faculty));
+
+//       // OPTIONAL: store token if backend sends it
+//       if (res.data.token) {
+//         localStorage.setItem("token", res.data.token);
+//       }
+
+//       // CLEAN UP (optional but safe)
+//       localStorage.removeItem("student");
+
+//       // ✅ ALWAYS USE FACULTY ROUTE
+//       navigate("/faculty/dashboard");
+
+//     } catch (err) {
+//       console.error("Faculty login failed:", err);
+//       setMessage(
+//         err.response?.data?.message || "Login failed. Please try again."
+//       );
+//     }
+//   };
+const handleLogin = async (e) => {
+  e.preventDefault();
+  setMessage("");
+
+  try {
+    const res = await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/faculty/login`,
+      {
+        registration_number: regNo,
+        password: password
       }
+    );
 
-      // ✅ STORE FACULTY (THIS WAS THE CORE BUG EARLIER)
-      localStorage.setItem("faculty", JSON.stringify(faculty));
+    const faculty = res.data.user;
 
-      // OPTIONAL: store token if backend sends it
-      if (res.data.token) {
-        localStorage.setItem("token", res.data.token);
-      }
-
-      // CLEAN UP (optional but safe)
-      localStorage.removeItem("student");
-
-      // ✅ ALWAYS USE FACULTY ROUTE
-      navigate("/faculty/dashboard");
-
-    } catch (err) {
-      console.error("Faculty login failed:", err);
-      setMessage(
-        err.response?.data?.message || "Login failed. Please try again."
-      );
+    if (!faculty || !faculty.id) {
+      throw new Error("Invalid faculty login response");
     }
-  };
+
+    localStorage.setItem("faculty", JSON.stringify(faculty));
+
+    if (res.data.token) {
+      localStorage.setItem("token", res.data.token);
+    }
+
+    localStorage.removeItem("student");
+
+    navigate("/faculty/dashboard");
+
+  } catch (err) {
+    console.error("Faculty login failed:", err);
+    setMessage(
+      err.response?.data?.message || "Login failed. Please try again."
+    );
+  }
 
   return (
     <div className="login-container">
