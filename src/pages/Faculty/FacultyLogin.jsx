@@ -70,8 +70,8 @@ export default function FacultyLogin() {
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/faculty/login`,
         {
-          registration_number: regNo,
-          password,
+          registration_number: formData.registration_number,
+    password: formData.password
         }
       );
 
