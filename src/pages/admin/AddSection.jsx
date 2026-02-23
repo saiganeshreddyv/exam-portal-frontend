@@ -13,7 +13,7 @@ export default function AddSection() {
     const admin = JSON.parse(localStorage.getItem("admin"));
 
     await axios.post(
-      "${import.meta.env.VITE_API_URL}/api/admin/sections",
+      `${import.meta.env.VITE_API_URL}/api/admin/sections`,
       { year, branch, section_code: code },
       { headers: { "x-admin-id": admin.id } }
     );
