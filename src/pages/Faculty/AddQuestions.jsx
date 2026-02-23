@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "../../styles/faculty/AddQuestions.css";
 
 export default function AddQuestion() {
-  const faculty = JSON.parse(localStorage.getItem("user"));
+  const faculty = JSON.parse(localStorage.getItem("faculty"));
 
   /* ================= MANUAL QUESTION ================= */
   const [question, setQuestion] = useState("");
