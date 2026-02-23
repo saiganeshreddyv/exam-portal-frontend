@@ -1,0 +1,201 @@
+/* ================= PAGE ================= */
+.add-question-page {
+  min-height: calc(100vh - 72px);
+  padding: 40px;
+  background: linear-gradient(180deg, #f6f9ff, #eef2f8);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 700px;
+}
+
+/* ================= CARD ================= */
+.add-question-card {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  padding: 36px;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+}
+
+.add-question-card h2 {
+  margin-bottom: 6px;
+  color: #0d47a1;
+}
+
+.add-question-card p {
+  margin-bottom: 24px;
+  color: #6b7280;
+}
+
+/* ================= FORM ================= */
+.add-question-card label {
+  display: block;
+  margin: 16px 0 6px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.add-question-card textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d0d7e2;
+  resize: vertical;
+  font-size: 15px;
+}
+
+.add-question-card input,
+.add-question-card select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d0d7e2;
+  font-size: 14px;
+}
+
+/* ================= OPTIONS GRID ================= */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* ================= BUTTONS ================= */
+button.primary {
+  margin-top: 24px;
+  background: linear-gradient(90deg, #1e88e5, #1565c0);
+  color: #ffffff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+button.primary:hover {
+  transform: translateY(-1px);
+}
+
+button.primary:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+button {
+  margin-top: 18px;
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ================= DIVIDER ================= */
+.divider {
+  margin: 36px 0;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ================= PDF PREVIEW ================= */
+.pdf-preview {
+  margin-top: 36px;
+}
+
+.pdf-preview h4 {
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+/* ================= PREVIEW CARD ================= */
+.preview-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.preview-card textarea {
+  min-height: 80px;
+  margin-bottom: 14px;
+}
+
+/* ================= OPTIONS LIST ================= */
+.preview-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.preview-card li {
+  margin-bottom: 10px;
+}
+
+.preview-card input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+/* ================= CORRECT OPTION INPUT ================= */
+.preview-card input.correct {
+  border: 2px solid #22c55e;
+  background: #ecfdf5;
+}
+
+/* ================= DROPDOWN CORRECT ================= */
+select.correct-selected {
+  border: 2px solid white;
+  background: #ecfdf5;
+  color: black;
+  font-weight: 600;
+}
+
+/* ================= PREVIEW CONTROLS ================= */
+.preview-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.preview-controls select {
+  max-width: 160px;
+}
+
+.preview-controls input[type="number"] {
+  max-width: 90px;
+}
+
+/* ================= AUTO TAG ================= */
+.auto-tag {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+/* ================= FILE INPUT ================= */
+input[type="file"] {
+  margin-top: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 640px) {
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

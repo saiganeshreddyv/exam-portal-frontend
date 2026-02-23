@@ -1,0 +1,270 @@
+/* RESET – VERY IMPORTANT */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* ROOT */
+.exam-root {
+  position: fixed;
+  inset: 0;
+  background: #f4f6f9;
+  font-family: system-ui, sans-serif;
+}
+
+/* TOP BAR – FULL WIDTH */
+.exam-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: #111827;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.exam-timer {
+  background: #374151;
+  padding: 6px 12px;
+  border-radius: 6px;
+  width: 100px;
+  font-size: 20px;
+}
+
+.finish-btn {
+  background: #dc2626;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  width: 100px;
+  font-size: 20px;
+  align-items: center;
+}
+
+/* LEFT PANEL – FIXED, STARTS FROM LEFT */
+.exam-left-panel {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  bottom: 56px;
+  width: 220px;
+  background: white;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.exam-camera-preview {
+  width: 100%;
+  height: 140px;
+  background: black;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* PALETTE */
+.palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.palette-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  border: none;
+  background: #64748b;
+  color: white;
+  font-weight: 600;
+}
+
+.palette-btn.current { background: #2563eb; }
+.palette-btn.answered { background: #16a34a; }
+.palette-btn.visited { background: #dc2626; }
+
+/* MAIN CONTENT – NO CENTERING */
+.exam-content {
+  position: absolute;
+  top: 56px;
+  left: 220px;
+  right: 0;
+  bottom: 56px;
+  padding: 30px;
+  background: rgb(241, 241, 241);
+  overflow-y: auto;
+}
+
+/* FIXED QUESTION HEIGHT */
+.question-box {
+  min-height: 120px;
+  max-height: 120px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.option {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.option.selected {
+  border-color: #16a34a;
+  background: #ecfdf5;
+}
+
+/* BOTTOM BAR – FULL WIDTH */
+.exam-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.next-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  width: 100px;
+  font-size: 20px;
+}
+
+.prev-btn {
+  background: #6b7280;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  width: 110px;
+  font-size: 20px;
+}
+
+
+/* CLASSIC EXAM OPTIONS */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.classic-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hide default radio */
+.classic-option input {
+  display: none;
+}
+
+/* Option label badge A/B/C/D */
+.option-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* Option text */
+.option-text {
+  font-size: 18px;
+  color: #111827;
+}
+
+/* Hover */
+.classic-option:hover {
+  border-color: #2563eb;
+  background: #f0f6ff;
+}
+
+/* Selected option */
+.classic-option.selected {
+  border-color: #2563eb;
+  background: #eaf2ff;
+}
+
+.classic-option.selected .option-badge {
+  background: #2563eb;
+  color: white;
+}
+
+
+/* VIOLATION OVERLAY */
+.violation-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.violation-modal {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 420px;
+}
+
+.violation-modal h2 {
+  margin-bottom: 10px;
+}
+
+.violation-modal button {
+  margin-top: 15px;
+  padding: 10px 18px;
+  font-size: 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+
+/* Disable text selection */
+.exam-root,
+.exam-content,
+.question-box,
+.options,
+.classic-option {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}

@@ -1,0 +1,70 @@
+.admin-sidebar {
+  width: 280px;
+  min-height: 95vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: linear-gradient(180deg, #1e3a8a, #312e81);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  padding: 24px 18px;
+
+  z-index: 100;
+}
+
+
+.admin-sidebar .logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  padding-left: 8px;
+}
+
+
+.admin-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #c7d2fe;
+  transition: all 0.25s ease;
+}
+
+.admin-sidebar nav a.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+.admin-sidebar nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.admin-footer {
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+.admin-footer button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+}

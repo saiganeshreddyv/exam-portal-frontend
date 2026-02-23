@@ -1,0 +1,136 @@
+/* PAGE */
+.student-exams-page {
+  padding: 40px 60px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* TITLE */
+.student-exams-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* GRID – THIS IS THE KEY FIX */
+.student-exams-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ FORCE 4 PER ROW */
+  gap: 25px;
+  width: 100%;
+}
+
+/* CARD */
+.student-exam-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  min-height: 210px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.student-exam-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* DISABLED */
+.student-exam-card.disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.student-exam-card.disabled:hover {
+  transform: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADER */
+.exam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exam-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* STATUS */
+.exam-status {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.exam-status.active {
+  background: #e6f7ee;
+  color: #1b7f3a;
+}
+
+.exam-status.completed {
+  background: #ffe8e8;
+  color: #c62828;
+}
+
+/* DESCRIPTION */
+.exam-desc {
+  margin: 12px 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* META */
+.exam-meta span {
+  display: block;
+  font-size: 13px;
+  margin-top: 6px;
+  color: #333;
+}
+
+/* NOTE */
+.exam-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Laptop */
+@media (max-width: 1200px) {
+  .student-exams-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .student-exams-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .student-exams-page {
+    padding: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .student-exams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-exams-page {
+    padding: 20px;
+  }
+}

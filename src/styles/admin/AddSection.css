@@ -1,0 +1,41 @@
+.add-section {
+  max-width: 520px;
+  width: 100%;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+}
+
+/* spacing */
+.add-section h2 {
+  margin-bottom: 24px;
+  margin-right: 350px;
+}
+
+
+.add-section select,
+.add-section input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #dcdfe6;
+  font-size: 15px;
+}
+
+.add-section button {
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-section button:hover {
+  background: #1e4ed8;
+}

@@ -1,0 +1,55 @@
+/* Page wrapper */
+.faculty-list-page {
+  padding: 30px;
+  max-width: 900px;
+  height:100px;
+}
+
+/* Page title */
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #111827;
+}
+
+/* Individual question card */
+.question-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Hover effect */
+.question-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Question text */
+.question-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Meta row */
+.question-meta {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Marks badge */
+.marks {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: #eef2ff;
+  padding: 4px 10px;
+  border-radius: 999px;
+}

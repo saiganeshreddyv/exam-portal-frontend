@@ -1,0 +1,159 @@
+.questions-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 24px;
+  overflow-anchor: none;
+  height: 300px;
+}
+
+
+/* ================= HEADER ================= */
+.questions-header {
+    scroll-margin-top: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.questions-header h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+/* Controls */
+.questions-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.questions-controls input {
+  height: 42px;
+  width: 240px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+.questions-controls select {
+  height: 42px;
+  min-width: 120px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: white;
+}
+
+.add-question-btn {
+  height: 42px;
+  padding: 0 22px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.add-question-btn:hover {
+  background: #1e40af;
+}
+
+/* ================= MARK GROUP ================= */
+.marks-block {
+  margin-bottom: 48px;
+}
+
+.marks-block h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e40af;
+  border-left: 4px solid #2563eb;
+  padding-left: 12px;
+  margin-bottom: 18px;
+}
+
+/* ================= QUESTION CARD ================= */
+.question-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px 26px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Top row */
+.question-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.question-text {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* Actions */
+.question-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn {
+  background: #f59e0b;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background: #d97706;
+}
+
+.delete-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* ================= OPTIONS ================= */
+.options-grid {
+  margin-left: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 6px;
+}
+
+.options-grid p {
+  color: #374151;
+}
+
+/* ================= ANSWER ================= */
+.correct-answer {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.correct-answer span {
+  color: #065f46;
+}

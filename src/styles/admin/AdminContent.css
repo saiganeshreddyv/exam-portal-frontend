@@ -1,0 +1,9 @@
+.admin-content {
+  margin-left: 280px; /* SAME AS SIDEBAR WIDTH */
+  width: calc(100vw - 280px);
+
+  padding: 40px 50px;
+  background: #f5f7fb;
+
+  min-height: 100vh;
+}

@@ -1,0 +1,5 @@
+.student-layout-content {
+  padding-top: 72px; /* navbar height */
+  width: 100%;
+  box-sizing: border-box;
+}

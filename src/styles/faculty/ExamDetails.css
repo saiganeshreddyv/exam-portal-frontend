@@ -1,0 +1,107 @@
+/* ===== PAGE ===== */
+.exam-details-page {
+  width: 100%;
+  padding: 24px 48px;
+  box-sizing: border-box;
+  height: 500px;
+  /* text-align: center; */
+}
+
+/* ===== EXAM SUMMARY ===== */
+.exam-summary {
+  width: 800px;
+  background: #fff;
+  padding: 22px 26px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin-bottom: 32px;
+}
+
+/* ===== QUESTIONS WORKSPACE ===== */
+.questions-workspace {
+  width: 100%;
+  max-width: 1200px;   /* readable, NOT centered */
+}
+
+/* ===== HEADER ===== */
+.questions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.questions-header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.add-question-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 180px;
+}
+
+/* ===== QUESTION LIST ===== */
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===== QUESTION CARD ===== */
+.question-card {
+  background: white;
+  padding: 22px 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ===== QUESTION TOP ===== */
+.question-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.question-top h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  max-width: 80%;
+}
+
+/* ===== REMOVE BUTTON ===== */
+.remove-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  width: 100px;
+}
+
+/* ===== OPTIONS ===== */
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 40px;
+  margin-top: 10px;
+}
+
+.options li {
+  list-style: none;
+}
+
+.options li.correct {
+  color: #15803d;
+  font-weight: 600;
+}

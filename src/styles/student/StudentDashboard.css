@@ -1,0 +1,42 @@
+.student-dashboard {
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* SAME ALIGNMENT AS FACULTY */
+.student-dashboard-inner {
+  max-width: 1200px;
+}
+
+/* HEADER */
+.dashboard-header {
+  margin-bottom: 40px;
+}
+
+/* STATS ROW */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* CARDS */
+.stat-card {
+  background: #fff;
+  padding: 30px;
+  width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* INFO */
+.dashboard-info {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}

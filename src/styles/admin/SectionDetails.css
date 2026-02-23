@@ -1,0 +1,167 @@
+/* ================= PAGE ================= */
+.section-page {
+  width: 100%;
+  padding: 32px 40px;
+  box-sizing: border-box;
+  height: 300px;
+}
+
+/* ================= HEADER ================= */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.section-header p {
+  font-size: 14px;
+  color: #555;
+}
+
+.faculty-name {
+  font-weight: 500;
+  color: #2563eb;
+}
+
+/* ================= ACTION BAR ================= */
+.section-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-actions button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Buttons */
+.section-actions .primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.section-actions .secondary {
+  background: #e5e7eb;
+  color: #111;
+}
+
+.section-actions .danger {
+  background: #ef4444;
+  color: #fff;
+}
+
+.section-actions .danger:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ================= TABLE ================= */
+.students-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.students-table thead {
+  background: #f1f5f9;
+}
+
+.students-table th,
+.students-table td {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.students-table th {
+  font-weight: 600;
+  color: #374151;
+}
+
+.students-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.students-table input[type="checkbox"] {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* ================= EMPTY STATE ================= */
+.students-table .empty {
+  text-align: center;
+  padding: 30px;
+  color: #6b7280;
+}
+
+/* ================= ACTION LINK ================= */
+.students-table .link {
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.students-table .link:hover {
+  text-decoration: underline;
+}
+
+
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 🔥 THIS IS THE FIX */
+  pointer-events: auto;
+}
+
+.modal-card {
+  background: #fff;
+  padding: 24px;
+  width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  z-index: 10000;
+
+  /* 🔥 ENSURE CLICKABLE */
+  pointer-events: auto;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  cursor: pointer;
+}

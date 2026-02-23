@@ -1,0 +1,94 @@
+.combined-login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  font-family: "Poppins", sans-serif;
+}
+
+.login-card {
+  background: white;
+  padding: 35px;
+  width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: slideIn 0.4s ease;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: space-between;
+  background: #e3f2fd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.toggle-buttons button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: transparent;
+  color: #1565c0;
+  transition: 0.3s;
+}
+
+.toggle-buttons button.active {
+  background-color: #1565c0;
+  color: white;
+}
+
+.login-form h2 {
+  color: #1565c0;
+  margin-bottom: 15px;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-form button {
+  padding: 10px;
+  background: #1565c0;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background: #0d47a1;
+}
+
+.message {
+  margin-top: 10px;
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
