@@ -68,7 +68,7 @@ export default function FacultyLogin() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/faculty/login",
+        `${import.meta.env.VITE_API_URL}/api/faculty/login`,
         {
           registration_number: regNo,
           password,

@@ -22,8 +22,8 @@ export default function ChangePassword() {
     try {
       const endpoint =
         role === "student"
-          ? "http://localhost:5000/api/students/change-password"
-          : "http://localhost:5000/api/faculty/change-password";
+          ? `${import.meta.env.VITE_API_URL}/api/students/change-password`
+          : `${import.meta.env.VITE_API_URL}/api/faculty/change-password`;
 
       const res = await axios.post(endpoint, {
         registration_number,

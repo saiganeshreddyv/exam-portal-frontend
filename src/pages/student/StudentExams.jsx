@@ -108,7 +108,7 @@ export default function StudentExams() {
     }
 
     axios
-      .get("http://localhost:5000/api/student/exams", {
+      .get(`${import.meta.env.VITE_API_URL}/api/student/exams`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

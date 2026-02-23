@@ -564,7 +564,7 @@ export default function CreateExam() {
       const faculty = JSON.parse(localStorage.getItem("user"));
       if (!faculty?.id) return;
 
-      const res = await axios.get("http://localhost:5000/api/questions", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/questions`, {
         headers: { "x-faculty-id": faculty.id },
       });
 
@@ -614,7 +614,7 @@ export default function CreateExam() {
 
     try {
       const examRes = await axios.post(
-        "http://localhost:5000/api/faculty/exams",
+        `${import.meta.env.VITE_API_URL}/api/faculty/exams`,
         {
           ...formData,
           duration: Number(formData.duration),
@@ -628,7 +628,7 @@ export default function CreateExam() {
       const examId = examRes.data.id || examRes.data.exam.id;
 
       await axios.post(
-        `http://localhost:5000/api/faculty/exams/${examId}/questions`,
+        `${import.meta.env.VITE_API_URL}/api/faculty/exams/${examId}/questions`,
         { questionIds: selectedQuestions },
         { headers: { "x-faculty-id": faculty.id } }
       );

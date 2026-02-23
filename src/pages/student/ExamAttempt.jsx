@@ -274,10 +274,11 @@
 // }
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import "../../styles/student/ExamAttempt.css";
+import "../../styles/student/examAttempt.css";
 import { useExamFlow } from "../../context/ExamFlowContext";
 import { useCamera } from "../../hooks/usecamera";
 import { useNavigate } from "react-router-dom";
+import api from "../../api";
 
 export default function ExamAttempt() {
   const { attemptId } = useExamFlow();
@@ -346,10 +347,14 @@ export default function ExamAttempt() {
     const fetchQuestions = async () => {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get(
-        `http://localhost:5000/api/exam-attempts/${attemptId}/questions`,
+      const res = await api.get(
+        `/api/exam-attempts/${attemptId}/questions`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
+      // const res = await axios.get(
+      //   `http://localhost:5000/api/exam-attempts/${attemptId}/questions`,
+      //   { headers: { Authorization: `Bearer ${token}` } }
+      // );
 
       setQuestions(res.data.questions);
       setTimeLeft(res.data.duration * 60);
@@ -402,8 +407,8 @@ export default function ExamAttempt() {
   const submitExam = async () => {
   const token = localStorage.getItem("token");
 
-  await axios.post(
-    `http://localhost:5000/api/exam-attempts/${attemptId}/submit`,
+  await api.post(
+    `/api/exam-attempts/${attemptId}/submit`,
     { answers,
         malpracticeCount: malpracticeCount,
      },
@@ -411,6 +416,15 @@ export default function ExamAttempt() {
       headers: { Authorization: `Bearer ${token}` },
     }
   );
+  // await axios.post(
+  //   `http://localhost:5000/api/exam-attempts/${attemptId}/submit`,
+  //   { answers,
+  //       malpracticeCount: malpracticeCount,
+  //    },
+  //   {
+  //     headers: { Authorization: `Bearer ${token}` },
+  //   }
+  // );
 
   stopCamera();
   navigate("/student/exam-submitted");

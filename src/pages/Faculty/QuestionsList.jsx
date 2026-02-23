@@ -293,7 +293,7 @@ export default function QuestionsList() {
 
   const fetchQuestions = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/questions", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/questions`, {
         headers: {
           "x-faculty-id": facultyId,
         },
@@ -314,7 +314,7 @@ export default function QuestionsList() {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/questions/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/questions/${id}`,
         {
           method: "DELETE",
           headers: {

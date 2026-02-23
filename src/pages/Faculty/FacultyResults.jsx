@@ -12,7 +12,7 @@ export default function FacultyResults() {
     const token = localStorage.getItem("token");
 
     axios
-      .get("http://localhost:5000/api/faculty/results", {
+      .get(`${import.meta.env.VITE_API_URL}/api/faculty/results`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {

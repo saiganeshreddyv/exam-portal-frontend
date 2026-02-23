@@ -84,8 +84,8 @@ const handleLogin = async (e) => {
   try {
     const url =
       role === "student"
-        ? "http://localhost:5000/api/student/login"
-        : "http://localhost:5000/api/faculty/login";
+        ? `${import.meta.env.VITE_API_URL}/api/student/login`
+        : `${import.meta.env.VITE_API_URL}/api/faculty/login`;
 
     const res = await axios.post(url, {
       registration_number: id.trim(),

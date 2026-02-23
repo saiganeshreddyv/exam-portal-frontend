@@ -915,7 +915,7 @@ export default function AddQuestion() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/questions", {
+      const res = await fetch("${import.meta.env.VITE_API_URL}/api/questions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -963,7 +963,7 @@ export default function AddQuestion() {
       setExtracting(true);
 
       const res = await fetch(
-        "http://localhost:5000/api/questions/extract-pdf",
+        "${import.meta.env.VITE_API_URL}/api/questions/extract-pdf",
         {
           method: "POST",
           headers: {
@@ -1010,7 +1010,7 @@ export default function AddQuestion() {
       }));
 
       const res = await fetch(
-        "http://localhost:5000/api/questions/bulk",
+        "${import.meta.env.VITE_API_URL}/api/questions/bulk",
         {
           method: "POST",
           headers: {

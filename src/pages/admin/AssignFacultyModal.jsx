@@ -21,7 +21,7 @@ export default function AssignFacultyModal({
 
   const fetchFaculty = async () => {
     const res = await axios.get(
-      "http://localhost:5000/api/admin/faculty",
+      `${import.meta.env.VITE_API_URL}/api/admin/faculty`,
       { headers: { "x-admin-id": admin.id } }
     );
     setFacultyList(res.data);
@@ -32,7 +32,7 @@ export default function AssignFacultyModal({
 
     setLoading(true);
     await axios.put(
-      `http://localhost:5000/api/admin/sections/${sectionId}/assign-faculty`,
+      `${import.meta.env.VITE_API_URL}/api/admin/sections/${sectionId}/assign-faculty`,
       { facultyId: selectedFaculty },
       { headers: { "x-admin-id": admin.id } }
     );

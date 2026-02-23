@@ -6,7 +6,7 @@ export default function FacultySections() {
     const admin = JSON.parse(localStorage.getItem("admin"));
 
     axios.get(
-      `http://localhost:5000/api/admin/faculty/${facultyId}/sections`,
+      `${import.meta.env.VITE_API_URL}/api/admin/faculty/${facultyId}/sections`,
       { headers: { "x-admin-id": admin.id } }
     ).then(res => setSections(res.data));
   }, [facultyId]);

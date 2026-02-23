@@ -124,12 +124,12 @@ export default function ExamDetails() {
       };
 
       const examRes = await axios.get(
-        `http://localhost:5000/api/faculty/exams/${examId}`,
+        `${import.meta.env.VITE_API_URL}/api/faculty/exams/${examId}`,
         headers
       );
 
       const questionRes = await axios.get(
-        `http://localhost:5000/api/faculty/exams/${examId}/questions`,
+        `${import.meta.env.VITE_API_URL}/api/faculty/exams/${examId}/questions`,
         headers
       );
 

@@ -1,3 +1,4 @@
+import api from "../../../api";
 export default function FacultyExams() {
   const { facultyId } = useParams();
   const [exams, setExams] = useState([]);
@@ -5,8 +6,8 @@ export default function FacultyExams() {
   useEffect(() => {
     const admin = JSON.parse(localStorage.getItem("admin"));
 
-    axios.get(
-      `http://localhost:5000/api/admin/faculty/${facultyId}/exams`,
+    api.get(
+      `/api/admin/faculty/${facultyId}/exams`,
       { headers: { "x-admin-id": admin.id } }
     ).then(res => setExams(res.data));
   }, [facultyId]);

@@ -13,7 +13,7 @@ export default function ExamAttempts() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:5000/api/faculty/results/${examId}`,
+        `${import.meta.env.VITE_API_URL}/api/faculty/results/${examId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -30,7 +30,7 @@ export default function ExamAttempts() {
 
   const publishResults = async () => {
     await axios.post(
-      `http://localhost:5000/api/faculty/exams/${examId}/publish-results`,
+      `${import.meta.env.VITE_API_URL}/api/faculty/exams/${examId}/publish-results`,
       {},
       { headers: { Authorization: `Bearer ${token}` } }
     );

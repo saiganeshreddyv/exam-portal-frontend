@@ -18,7 +18,7 @@ export default function SectionsList() {
   const admin = JSON.parse(adminRaw);
 
   axios
-    .get("http://localhost:5000/api/admin/sections", {
+    .get(`${import.meta.env.VITE_API_URL}/api/admin/sections`, {
       headers: { "x-admin-id": admin.id },
     })
     .then((res) => {

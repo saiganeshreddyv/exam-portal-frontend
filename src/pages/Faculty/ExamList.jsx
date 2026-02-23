@@ -24,7 +24,7 @@ export default function ExamList() {
       }
 
       const res = await axios.get(
-        `http://localhost:5000/api/faculty/exams/faculty/${faculty.id}`
+        `${import.meta.env.VITE_API_URL}/api/faculty/exams/faculty/${faculty.id}`
       );
 
       setExams(res.data);
@@ -46,7 +46,7 @@ const toggleStatus = async (examId) => {
     }
 
     const res = await axios.patch(
-      `http://localhost:5000/api/faculty/exams/${examId}/status`,
+      `${import.meta.env.VITE_API_URL}/api/faculty/exams/${examId}/status`,
       {},
       {
         headers: {
@@ -85,7 +85,7 @@ const toggleStatus = async (examId) => {
     }
 
     await axios.delete(
-      `http://localhost:5000/api/faculty/exams/${examId}`,
+      `${import.meta.env.VITE_API_URL}/api/faculty/exams/${examId}`,
       {
         headers: {
           "x-faculty-id": faculty.id,

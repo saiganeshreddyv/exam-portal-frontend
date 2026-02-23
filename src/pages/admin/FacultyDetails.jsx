@@ -169,7 +169,7 @@ export default function FacultyDetail() {
       const admin = JSON.parse(localStorage.getItem("admin"));
 
       const res = await axios.get(
-        `http://localhost:5000/api/admin/faculty/${facultyId}/overview`,
+        `${import.meta.env.VITE_API_URL}/api/admin/faculty/${facultyId}/overview`,
         {
           headers: { "x-admin-id": admin.id },
         }
@@ -201,7 +201,7 @@ export default function FacultyDetail() {
       const admin = JSON.parse(localStorage.getItem("admin"));
 
       const res = await axios.patch(
-        `http://localhost:5000/api/admin/faculty/${faculty.id}/status`,
+        `${import.meta.env.VITE_API_URL}/api/admin/faculty/${faculty.id}/status`,
         {},
         {
           headers: { "x-admin-id": admin.id },

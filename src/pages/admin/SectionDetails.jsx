@@ -305,7 +305,7 @@ export default function SectionDetails() {
   const fetchSection = useCallback(async () => {
   try {
     const res = await axios.get(
-      `http://localhost:5000/api/admin/sections/${sectionId}`,
+      `${import.meta.env.VITE_API_URL}/api/admin/sections/${sectionId}`,
       { headers: { "x-admin-id": admin.id } }
     );
     console.log("FETCHED SECTION:", res.data);
@@ -319,7 +319,7 @@ export default function SectionDetails() {
   const fetchStudents = useCallback(async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/admin/sections/${sectionId}/students`,
+        `${import.meta.env.VITE_API_URL}/api/admin/sections/${sectionId}/students`,
         { headers: { "x-admin-id": admin.id } }
       );
       setStudents(res.data);
@@ -338,13 +338,13 @@ export default function SectionDetails() {
     try {
       if (editStudent) {
         await axios.put(
-          `http://localhost:5000/api/admin/students/${editStudent.id}`,
+          `${import.meta.env.VITE_API_URL}/api/admin/students/${editStudent.id}`,
           data,
           { headers: { "x-admin-id": admin.id } }
         );
       } else {
         await axios.post(
-          `http://localhost:5000/api/admin/sections/${sectionId}/students`,
+          `${import.meta.env.VITE_API_URL}/api/admin/sections/${sectionId}/students`,
           data,
           { headers: { "x-admin-id": admin.id } }
         );
@@ -366,7 +366,7 @@ export default function SectionDetails() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/admin/students/delete",
+        "${import.meta.env.VITE_API_URL}/api/admin/students/delete",
         { studentIds: selectedStudentIds },
         { headers: { "x-admin-id": admin.id } }
       );
@@ -389,7 +389,7 @@ const handleCsvUpload = async () => {
     console.log("Uploading CSV...");
 
     await axios.post(
-      `http://localhost:5000/api/admin/sections/${sectionId}/students/upload`,
+      `${import.meta.env.VITE_API_URL}/api/admin/sections/${sectionId}/students/upload`,
       formData,
       {
         headers: {

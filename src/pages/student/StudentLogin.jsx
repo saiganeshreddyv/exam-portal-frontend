@@ -13,7 +13,7 @@ export default function StudentLogin() {
   console.log("🟢 Login button clicked"); // Add this
   setMessage("");
   try {
-    const res = await axios.post("http://localhost:5000/api/students/login", {
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/students/login`, {
       registration_number: regNo,
       password: password,
     });

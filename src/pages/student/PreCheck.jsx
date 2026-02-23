@@ -117,7 +117,7 @@ export default function PreCheck() {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5000/api/exam-attempts/start",
+        `${import.meta.env.VITE_API_URL}/api/exam-attempts/start`,
         { exam_id: selectedExam.id },
         {
           headers: { Authorization: `Bearer ${token}` },
