@@ -22,7 +22,7 @@ export default function ChangePassword() {
     try {
       const endpoint =
         role === "student"
-          ? `${import.meta.env.VITE_API_URL}/api/students/change-password`
+          ? `${import.meta.env.VITE_API_URL}/api/student/change-password`
           : `${import.meta.env.VITE_API_URL}/api/faculty/change-password`;
 
       const res = await axios.post(endpoint, {
